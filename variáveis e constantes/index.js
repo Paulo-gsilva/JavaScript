@@ -27,3 +27,4 @@ com let isso ocosarionaria erro
 //let numero = '5'; //string
 let numero = Number('5'); //converte para numero
 console.log(typeof(numero));
+
