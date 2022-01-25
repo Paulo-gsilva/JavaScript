@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 70%;
+    background: rgba(7, 105, 129, 0.712);
+}
+
+.container{
+    background: white;
+    margin: 5rem auto;
+    width: 40rem;
+    height: 50rem;
+    border-radius: 2%;
+    padding: 2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container h1{
+    font-size: 3rem;
+    text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+    width: 30rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+table th{
+    font-size: 1.7rem;
+}
+table td{
+    font-size: 1.2rem;
+}
+
+table td, table th{
+    border: 0.01rem solid rgba(0, 0, 0, 0.37);
+    padding: 0.2rem;
+}
+
+.h1calc{
+    margin-bottom: 2rem;
+}
+
+form input, form label, form button{
+    font-size: 1.5rem;
+    display: block;
+    width: 100%;
+    margin: 1rem auto;
+}
+
+form input{
+    margin-bottom: 2rem;
+}
+
+form label{
+    text-align: left;
+    margin: -1rem 0;
+}
+
+form button{
+    margin: 2rem 0;
+    border: none;
+    padding: 1rem;
+    background: rgba(7, 105, 129, 0.712);
+}
+
+form button:hover{
+    background: rgb(11, 144, 177);
+}
+
+.paragrafo-positivo{
+    background: rgba(3, 212, 3, 0.466);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+}
+.paragrafo-negativo{
+    background: rgba(255, 0, 0, 0.863);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+}
