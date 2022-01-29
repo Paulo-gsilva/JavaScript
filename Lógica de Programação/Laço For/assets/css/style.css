@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 70%;
+    background: rgba(7, 105, 129, 0.712);
+}
+
+.container{
+    background: white;
+    margin: 5rem auto;
+    width: 40rem;
+    height: 20rem;
+    border-radius: 2%;
+    padding: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}

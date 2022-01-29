@@ -1,4 +1,4 @@
-let horario = 25;
+/*let horario = 25;
 if(horario > 0 && horario < 5){
     console.log('Boa Madrugada');
 }
@@ -13,4 +13,12 @@ else if(horario > 18 && horario < 24){
 }
 else{
     console.log('Horário indefinido');
-}
+}*/
+
+const numero = 19;
+const maiorDez = numero > 10 ? 'Maior que dez' : 'Menor que dez';
+console.log(maiorDez);
+
+const nome = null; //'PAulo'
+const nomeUSuario = nome || 'Usuário';
+console.log(nomeUSuario);
