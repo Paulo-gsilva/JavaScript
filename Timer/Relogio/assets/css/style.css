@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 70%;
+    background: rgba(7, 105, 129, 0.712);
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.container{
+    background: white;
+    margin: 5rem auto;
+    width: 40rem;
+    height: 30rem;
+    border-radius: 2%;
+    padding: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+}
+
+button{
+    margin: 1rem auto;
+    border: none;
+    background: rgba(7, 105, 129, 0.712);
+    color: white;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cronometro{
+    margin: 3rem auto;
+    
+}
+
+.botoes{
+   text-align: center;
+}
+
+.cronometro p{
+    font-size: 5rem;
+    text-align: center;
+}
+
+/*  js  */
+.stoped{
+    color: red;
+}
