@@ -63,7 +63,7 @@ function saveAssig(){
     }
     
     const assigJSON = JSON.stringify(listAssig);
-    localStorage.setItem('tarefas', assigJSON);
+    localStorage.setItem('tarefas', listAssig);
 }
 
 function addAssigSaved(){
