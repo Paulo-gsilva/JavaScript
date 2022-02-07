@@ -1,0 +1,56 @@
+@charset "UTF-8";
+:root{
+    --main-color: rgba(7, 105, 129, 0.712);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 70%;
+    background: var(--main-color);
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.container{
+    background: white;
+    margin: 5rem auto;
+    max-width: 40rem;
+    border-radius: 2%;
+    padding: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+}
+
+.calculadora{
+    margin: 1rem auto;
+    width: 40rem;
+    text-align: center;
+}
+
+.display{
+    font-size: 2rem;
+    width: 100%;
+    text-align: right;
+}
+
+button{
+    width: 100%;
+    font-size: 2rem;
+    background: var(--main-color);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+button:hover{
+    background: rgba(7, 105, 129, 0.89);
+}
+
+
