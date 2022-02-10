@@ -3,6 +3,8 @@ console.log(alunos);
 //console.log(alunos[0]);
 //console.log(alunos[1]);
 //console.log(alunos[2]);
+//const pessoas = alunos; dessa forma os dois serão afetadas com mudanças 
+//const pessoas = [...alunos]; dessa forma pessoas recebe uma cópia de alunos
 
 alunos[0] = 'Joana';
 console.log(alunos);
