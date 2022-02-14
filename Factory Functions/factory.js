@@ -21,4 +21,4 @@ function createPerson(name, surname, weight, height){
 const person1 = createPerson('Paulo', 'Guilherme', 78, 1.82);
 const person2 = createPerson('Camily', 'Viena', 65, 1.64);
 
-console.log(person1.sayName());
+console.log(person2.sayName());

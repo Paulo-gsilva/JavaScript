@@ -23,10 +23,11 @@ function average(){
 }
 
 function aproved(){
-    student.filter(function(value){
-        let avarageStudents = (value.note1 + value.note2 + value.note3 + value.note4) / 4;
-        if(avarageStudents > 7) console.log(`${value.name}: ${avarageStudents}`);
+    const aproved = student.filter(function(value){
+        avarageStudents = (value.note1 + value.note2 + value.note3 + value.note4) / 4;
+        return avarageStudents > 7;
     });
+    console.log(aproved);
 }
 
 function reproved(){
