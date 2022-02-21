@@ -13,6 +13,7 @@ const pessoas = [
 
 const soma = array.reduce(function(acumulador, valor){
     acumulador += valor;
+    console.log(acumulador);
     return acumulador;
 });
 
@@ -25,5 +26,5 @@ const pessoaMaisVelha = pessoas.reduce(function(acumulador, valor, indice, array
     return valor;
 });
 
-console.log(pessoaMaisVelha);
+console.log(soma);
 

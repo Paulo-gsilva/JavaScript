@@ -58,12 +58,12 @@ function saveAssig(){
 
     for(let index of liAssig){
         let assigText = index.innerText;
-        assigText = assigText.replace('Apagar', '');
+        assigText = assigText.replace('X', '');
         listAssig.push(assigText);
     }
     
     const assigJSON = JSON.stringify(listAssig);
-    localStorage.setItem('tarefas', listAssig);
+    localStorage.setItem('tarefas', assigJSON);
 }
 
 function addAssigSaved(){
