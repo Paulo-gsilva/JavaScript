@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Data</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Formulário de Adesão</h1>
+
+        <div class="container-lista">
+            <p>Por favor, preencha de acordo com o solicitado.</p>
+            <ul class="formulario">
+                <li>Nenhum campo pode estar vazio</li>
+                <li>Usuário só poderá conter letras ou números</li>
+                <li>Usuário deverá ter entre 3 e 12 caracteres</li>
+                <li>Senha deve conter de 6 a 12 caracteres</li>
+            </ul>
+        </div>
+
+        <form class="container-formulario">
+            <label>Nome</label><input type="text" class="nome validar">
+            <label>Sobrenome</label><input type="text" class="sobrenome validar">
+            <label>CPF</label><input type="text" class="cpf validar" maxlength="14">
+            <label>Usuário</label><input type="text" class="user validar">
+            <label>Senha</label><input type="password" class="senha validar">
+            <label>Repetir Senha</label><input type="password" class="repetir-senha validar">
+            <button type="submit">Enviar</button>
+        </form>
+    
+        <ul class="lista-tarefa"></ul>
+    </div>
+
+    <script src="assets/js/cpf.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

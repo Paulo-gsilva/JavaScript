@@ -15,12 +15,13 @@ function filter(array){
     return array.filter(function(num){
         return num > 10;
     });   
-}
+}*/
 
 const filter = array.filter(function(num){
     return num > 10;
 });
-*/
+console.log(filter);
+/*
 
 //const filter = array.filter(num => num > 10);
 //const filter = pessoas.filter(num => num.idade > 50);
@@ -28,4 +29,4 @@ const filter = array.filter(function(num){
 const filter = pessoas.filter(string => string.nome.toLowerCase().endsWith('a'));
 //toLowerCase: deixa as palavras todas em minusculas para ocorrer apenas uma checagem
 //endsWith: especifica o termino da palavra
-console.log(filter);
+console.log(filter);*/

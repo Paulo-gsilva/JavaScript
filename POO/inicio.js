@@ -1,4 +1,4 @@
-class Person{
+class Person{ //PODE-SE ACESSAR OS ATRIBUTOS DENTRO DA PRÓPRIA CLASSE
     constructor(name, surname){
         this.name = name;
         this.surname = surname;

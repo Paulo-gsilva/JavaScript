@@ -1,0 +1,68 @@
+@charset "UTF-8";
+:root{
+    --main-color: rgba(7, 105, 129, 0.712);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 70%;
+    background: var(--main-color);
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.container{
+    background: white;
+    margin: 2.5rem auto;
+    width: 40rem;
+    border-radius: 2%;
+    padding: 2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-lista{
+    margin: 1rem;
+}
+
+.container-lista li{
+    margin-left: 2rem;
+    font-size: 1.5rem;
+}
+
+.container-lista p{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.container-formulario{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-formulario input{
+    width: 30rem;
+    padding: 0.5rem;
+}
+
+.container-formulario label{
+    font-size: 1.5rem;
+    margin-top: 1.2rem;
+}
+
+.container-formulario button{
+    width: 10rem;
+    margin-top: 1rem;
+}
+
+.container-formulario p{
+    color: red;
+}

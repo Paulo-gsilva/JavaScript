@@ -8,6 +8,7 @@ class Test{
 
     Birthday(){
         this.idade += 1;
+        Test.hello();
     }
 
     static hello(){
@@ -16,5 +17,5 @@ class Test{
 }
 
 const teste = new Test('João');
-Test.hello();
+teste.Birthday();
 console.log(teste);
