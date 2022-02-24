@@ -28,13 +28,11 @@ class ValidForm{
 
         if(password.value !== repeatPassword.value){
             this.createError(repeatPassword, 'Senhas Precisam Ser Iguais');
-
             valid = false; 
         } 
 
         if(password.value.length < 6 || password.value.length > 12){
             this.createError(password, 'Senha Deve Ter Entre 6 e 12 Caracteres');
-
             valid = false;
         }
 
