@@ -15,5 +15,7 @@ export default function geraPassword(qua, mai, min, num, sim){
         num && senhaArray.push(geraNumero());
         sim && senhaArray.push(geraSimbolos());
     }
-    return senhaArray.join('').slice(0, qua);
+
+    const embaralha = senhaArray.sort(() => 0.5 - Math.random());
+    return embaralha.join('').slice(0, qua);
 }
