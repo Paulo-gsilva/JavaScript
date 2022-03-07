@@ -11,5 +11,3 @@ const count = () => 1 +1;
 module.exports = {
     name, surname, fullName
 }
-
-console.log(module.exports);
