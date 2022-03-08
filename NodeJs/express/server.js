@@ -31,3 +31,11 @@ app.listen(3000, () => {
     console.log('http://localhost:3000');
     console.log('Executando Na Porta 3000');
 });
+
+//INSTALAR NODEMON:
+//npm install nodemon --save-dev
+//ASSISTIR:
+//npx nodemon server.js
+//OU
+//"start": "nodemon server.js"
+//npm start
