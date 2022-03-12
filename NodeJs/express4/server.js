@@ -9,17 +9,17 @@ mongoose.connect(process.env.CONNECTMONGO)
         app.emit('pronto'); //emitindo sinal para verificar a conexão com o banco de dados
     })
     .catch(e => console.log(e));
-
 const session = require('express-session'); //gravar sessão na memória
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
-
 const routes = require('./routes');
 const path = require('path');
-const middleware = require('./src/middlewares/middleware')
+const helmet = require('helmet');
+const crsf = require('csurf');
+const {middlewareGlobal, checkCrsfError, csfrMiddleware} = require('./src/middlewares/middleware');
 
+app.use(helmet());
 app.use(express.urlencoded({extended: true})); //objeto que retorna o body
-
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 const sessionOptions = session({
@@ -39,7 +39,10 @@ app.use(flash());
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 
-app.use(middleware);
+app.use(crsf());
+app.use(middlewareGlobal);
+app.use(checkCrsfError);
+app.use(csfrMiddleware);
 app.use(routes);
 //garantir que a base de dados conecte-se antes do cliente possa acessar o site
 app.on('pronto', () => {
