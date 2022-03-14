@@ -1,16 +1,15 @@
 require('dotenv').config();
-
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 mongoose.connect(process.env.CONNECTMONGO)
     .then(() => {
-        console.log('emitindo');
-        app.emit('pronto'); //emitindo sinal para verificar a conexão com o banco de dados
+        console.log('Sinal Emitido');
+        app.emit('Banco de dados carregado'); //emitindo sinal para verificar a conexão com o banco de dados
     })
     .catch(e => console.log(e));
-const session = require('express-session'); //gravar sessão na memória
-const MongoStore = require('connect-mongo');
+const MongoStore = require('connect-mongo'); 
+const session = require('express-session');
 const flash = require('connect-flash');
 const routes = require('./routes');
 const path = require('path');
@@ -19,10 +18,9 @@ const crsf = require('csurf');
 const {middlewareGlobal, checkCrsfError} = require('./src/middlewares/middleware');
 
 app.use(helmet());
-app.use(express.urlencoded({extended: true})); //objeto que retorna o body
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'public')));
-
 const sessionOptions = session({
     secret: 'ahsdiaushdisahdiahdiuahd',
     //store: new MongoStore({mongooseConnection: mongoose.connection}),
@@ -36,20 +34,17 @@ const sessionOptions = session({
 });
 app.use(sessionOptions);
 app.use(flash());
+app.use(crsf());
+app.use(middlewareGlobal);
+app.use(checkCrsfError);
+app.use(routes);
 
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 
-app.use(crsf());
-app.use(middlewareGlobal);
-app.use(checkCrsfError);
-//app.use(csfrMiddleware);
-app.use(routes);
-//garantir que a base de dados conecte-se antes do cliente possa acessar o site
-app.on('pronto', () => {
+app.on('Banco de dados carregado', () => {
     app.listen(3000, () => {
         console.log('http://localhost:3000');
         console.log('Executando Na Porta 3000');
     });
 })
-

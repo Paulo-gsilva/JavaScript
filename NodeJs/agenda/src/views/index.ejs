@@ -1,0 +1,14 @@
+<%- include('includes/head')%>
+
+    <section class="container">
+        <h1 class="texto">
+            <%-variavelLocal%></br>
+            <%- typeof titulo !== "undefined" ? titulo : 'Deu ruim' %></br>
+            <% numeros.forEach(num => { %>
+                <%=num%>  
+            <% }) %></br>
+        </h1>
+
+    </section>
+
+<%- include('includes/footer')%>

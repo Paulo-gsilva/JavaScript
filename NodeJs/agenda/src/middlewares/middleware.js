@@ -8,9 +8,3 @@ exports.checkCrsfError = (error, req, res, next) => {
         return res.sand('BAD CSRF.');
     }
 }
-
-/*
-exports.csfrMiddleware = (req, res, next) => {
-    res.locals.csfrToken = req.csfrToken();
-    next();
-}*/
