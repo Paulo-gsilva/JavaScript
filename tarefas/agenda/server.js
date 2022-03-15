@@ -8,14 +8,14 @@ mongoose.connect(process.env.CONNECTMONGO)
         app.emit('Banco de dados carregado'); //emitindo sinal para verificar a conexão com o banco de dados
     })
     .catch(e => console.log(e));
-const MongoStore = require('connect-mongo'); 
+const MongoStore = require('connect-mongo'); //salva os dados no banco de dados
 const session = require('express-session');
 const flash = require('connect-flash');
 const routes = require('./routes');
 const path = require('path');
 const helmet = require('helmet');
 const crsf = require('csurf');
-const {middlewareGlobal, checkCrsfError} = require('./src/middlewares/middleware');
+const {middlewareGlobal, checkCrsfError, csfrMiddleware} = require('./src/middlewares/middleware');
 
 app.use(helmet());
 app.use(express.urlencoded({extended: true}));
@@ -37,6 +37,7 @@ app.use(flash());
 app.use(crsf());
 app.use(middlewareGlobal);
 app.use(checkCrsfError);
+app.use(csfrMiddleware);
 app.use(routes);
 
 app.set('views', path.resolve(__dirname, 'src', 'views'));
