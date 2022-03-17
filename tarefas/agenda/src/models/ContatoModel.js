@@ -67,9 +67,15 @@ class Contato{
 
     static async buscaContato(id){
         const user = await ContatoModel.find()
-            .sort({criadoEm: -1});
+            .sort({criadoEm: -1}); //ordenar de forma decrescente 
         return user;
     }
+
+    static async delete(id){
+        if(typeof(id) !== 'string') return;
+        const user = await ContatoModel.findByIdAndDelete(id);
+        return user;
+    }   
 }
 
 module.exports = Contato;

@@ -23,6 +23,14 @@ exports.loginRequired = (req, res, next) =>{ //veriicar se está logado
         req.session.save(() => res.redirect('/'));
         return;
     }
+    next();
+}
 
+exports.deleteRequired = (req, res, next) =>{ //veriicar se está logado
+    if(!req.session.user){
+        req.flash('errors', 'Você precisa estar logado para deletar contatos');
+        req.session.save(() => res.redirect('/'));
+        return;
+    }
     next();
 }

@@ -58,3 +58,13 @@ exports.edit = async (req, res) => {
         res.render('404')
     }
 }
+
+exports.delete = async (req, res) => {
+    if(!req.params.id) return res.render('404');
+    const contato = await Contato.delete(req.params.id);
+    if(!contato) return res.render('404'); //caso nao exista usuarios
+
+    req.flash('success', `${contato.nome} ${contato.sobrenome} deletado da sua lista de contatos.`);
+    req.session.save(() => res.redirect`/`);
+    return;
+}
