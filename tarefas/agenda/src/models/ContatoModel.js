@@ -52,8 +52,7 @@ class Contato{
     }
 
     async edit(id){
-        if(typeof(id) !== 'string') return;~
-        console.log(id);
+        if(typeof(id) !== 'string') return;
         this.validar();
         if(this.errors.length > 0) return;
 

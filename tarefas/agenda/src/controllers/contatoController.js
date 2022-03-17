@@ -35,7 +35,7 @@ exports.editIndex = async (req, res) => {
 
     if(!contato) return res.render('404'); //caso nao exista usuarios
 
-    res.render('contato', {contato});
+    res.render('contato', {contato}); //vai renderizar no arquivo contato a variavel contato
 }
 
 exports.edit = async (req, res) => {

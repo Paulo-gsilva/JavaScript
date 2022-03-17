@@ -17,7 +17,7 @@ exports.csfrMiddleware = (req, res, next) =>{
     next();
 }
 
-exports.loginRequired = (req, res, next) =>{
+exports.loginRequired = (req, res, next) =>{ //veriicar se está logado
     if(!req.session.user){
         req.flash('errors', 'Você precisa estar logado para cadastrar contatos');
         req.session.save(() => res.redirect('/'));
