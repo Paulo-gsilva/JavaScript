@@ -17,7 +17,7 @@ exports.csfrMiddleware = (req, res, next) =>{
     next();
 }
 
-exports.loginRequired = (req, res, next) =>{ //veriicar se está logado
+exports.loginRequired = (req, res, next) =>{ //verificar se está logado
     if(!req.session.user){
         req.flash('errors', 'Você precisa estar logado para cadastrar contatos');
         req.session.save(() => res.redirect('/'));
@@ -26,7 +26,7 @@ exports.loginRequired = (req, res, next) =>{ //veriicar se está logado
     next();
 }
 
-exports.deleteRequired = (req, res, next) =>{ //veriicar se está logado
+exports.deleteRequired = (req, res, next) =>{ //verificar se está logado
     if(!req.session.user){
         req.flash('errors', 'Você precisa estar logado para deletar contatos');
         req.session.save(() => res.redirect('/'));

@@ -88,7 +88,10 @@ class Login{
             password: this.body.password
         }
     }
-}
 
+    userId(){
+        console.log(this.user._id);
+    }
+}
 
 module.exports = Login;
