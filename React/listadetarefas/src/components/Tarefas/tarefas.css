@@ -1,0 +1,37 @@
+.main ul{
+    width: 80%;
+    margin: 1rem 0 0.5rem  0;
+    align-self: left;
+}
+
+.main ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.2rem;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+
+.main ul li:hover{
+    background: var(--azul-claro);
+}
+
+.main ul li .edit, .main ul li .delete{
+    margin: 0 0.3rem;
+    cursor: pointer;
+}
+
+.main ul li:hover .edit, .main ul li:hover .delete{
+    color: black;
+}
+
+.main ul li .edit{
+    color: var(--azul-claro);
+}
+
+.main ul li .delete{
+    color: var(--rosa);
+}

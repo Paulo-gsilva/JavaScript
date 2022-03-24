@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-
-//FORM
-import { FaPlus } from 'react-icons/fa';
-
-//TAREFAS
-import { FaEdit, FaWindowClose } from 'react-icons/fa';
+import Form from './Form';
+import Tarefas from './Tarefas';
 
 import './Main.css'
 
@@ -92,36 +88,16 @@ export default class Main extends Component {
         return (
             <div className='main'>
                 <h1>Lista de Tarefas</h1>
-
-                <form action='#' className='form' onSubmit={this.handleSubmit}>
-                    <input
-                        onChange={this.handleChange}
-                        type='text'
-                        placeholder='O que temos pra hoje?'
-                        value={novaTarefa}>
-                    </input>
-                    <button type='submit'>
-                        <FaPlus />
-                    </button>
-                </form>
-
-                <ul className="tarefas">
-                    {tarefas.map((tarefa, index) => (
-                        <li key={tarefa}>
-                            {tarefa}
-                            <div>
-                                <FaEdit
-                                    onClick={(e) => this.handleEdit(e, index)}
-                                    className='edit'
-                                />
-                                <FaWindowClose
-                                    onClick={(e) => this.handleDelete(e, index)}
-                                    className='delete'
-                                />
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+                <Form
+                    handleSubmit={this.handleSubmit}
+                    handleChange={this.handleChange}
+                    novaTarefa={novaTarefa}
+                />
+                <Tarefas
+                    handleEdit={this.handleEdit}
+                    handleDelete={this.handleDelete}
+                    tarefas={tarefas}
+                />
             </div>
         );
     }
