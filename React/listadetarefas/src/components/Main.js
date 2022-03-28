@@ -11,19 +11,23 @@ export default class Main extends Component {
         index: -1 //estado para realizar edição. !== -1 está editando
     }
 
+    //EXECUTA QUANDO O COMPONENTE FOR MONTADO
     componentDidMount() {
         const tarefas = JSON.parse(localStorage.getItem('tarefas'));
 
         if (!tarefas) return;
 
+        //INSERE AS TAREFAS EXISTENTES NO ARRAY TAREFAS
         this.setState({ tarefas });
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps, prevState) { //SALVA AS TAREFAS NO LOCAL STORAGE CADA VEZ QUE O COMPONENTE É ATUALIZADO
         const { tarefas } = this.state;
 
+        //PREVSTATE = RECEBE O ESTADO ANTERIOR A ATUALIZACAO E VERIFICA SE É IGUAL SE É IGUAL AO ARRAY TAREFAS
         if (tarefas === prevState.tarefas) return;
 
+        //SALVA NO LOCAL STORAGE APÓS A ATUALIZAÇÃO
         localStorage.setItem('tarefas', JSON.stringify(tarefas));
     }
 
