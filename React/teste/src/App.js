@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Luz from "./Components/Luz/Evento";
 import MudarCor from "./Components/MudaCor";
 
 export default function App() {
@@ -12,6 +13,8 @@ export default function App() {
     setAumentar((numero) => numero + 1);
   }
 
+  const [acender, setAcender] = useState(false);
+
   return (
     <>
       <h1 onClick={incrementarNumero}>salve - {aumentar}</h1>
@@ -19,6 +22,7 @@ export default function App() {
         //lista.map(pessoas => <p>{pessoas.nome}</p>)
       }</h2>
       <MudarCor />
+      <Luz acender={acender} setAcender={setAcender} />
     </>
   );
 }
