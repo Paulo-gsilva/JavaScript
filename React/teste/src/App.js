@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Luz from "./Components/Luz/Evento";
 import MudarCor from "./Components/MudaCor";
+import RequisicaoProps from "./Components/RequisicaoProps";
 
 export default function App() {
   const [aumentar, setAumentar] = useState(0);
@@ -23,6 +24,8 @@ export default function App() {
       }</h2>
       <MudarCor />
       <Luz acender={acender} setAcender={setAcender} />
+      <RequisicaoProps id={1} nome='João' />
+      <RequisicaoProps />
     </>
   );
 }

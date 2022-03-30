@@ -6,9 +6,7 @@ export default function Luz(props) {
     return (
         <>
             <img style={{ width: '200px' }} src={props.acender ? luzAcesa : luzApagada}></img>
-            <button onClick={() => props.setAcender(!props.acender)}>
-                {props.acender?'Apagar':'Acender'}
-            </button>
+            <button onClick={() => props.setAcender(!props.acender)}>{!props.acender ? 'Acender' : 'Apagar'}</button>
         </>
     );
 }
