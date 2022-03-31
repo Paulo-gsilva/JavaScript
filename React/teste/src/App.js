@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Evento from "./Components/Evento";
 import Luz from "./Components/Luz/Evento";
 import MudarCor from "./Components/MudaCor";
 import RequisicaoProps from "./Components/RequisicaoProps";
@@ -14,6 +15,10 @@ export default function App() {
     setAumentar((numero) => numero + 1);
   }
 
+  function mandaSalve() { //atribuindo função do pai ao filho por meio de props
+    console.log(`Salve`);
+  }
+
   const [acender, setAcender] = useState(false);
 
   return (
@@ -26,6 +31,7 @@ export default function App() {
       <Luz acender={acender} setAcender={setAcender} />
       <RequisicaoProps id={1} nome='João' />
       <RequisicaoProps />
+      <Evento mandaSalve={mandaSalve} />
     </>
   );
 }

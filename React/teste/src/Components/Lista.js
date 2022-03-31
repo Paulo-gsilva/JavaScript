@@ -10,7 +10,7 @@ export default function Lista() {
     return (
         <>
             {lista.map(pessoas => //JSON.stringify(lista, null, 2)
-                <p>Id: {pessoas.id}, Nome: {pessoas.nome}</p>
+                <p key={pessoas.id}>Id: {pessoas.id}, Nome: {pessoas.nome}</p>
             )}
         </>
     );
