@@ -41,6 +41,8 @@ export default function App() {
       <RequisicaoProps id={1} nome='João' />
       <RequisicaoProps />
       <Evento mandaSalve={mandaSalve} />
+
+      //state lift é usado para compartilhar o state, componentes dependem do mesmo state
       <RecebeNome setNome={setNome} />
       <MandaSalve nome={nome} />
       */}
