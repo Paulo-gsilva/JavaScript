@@ -30,6 +30,7 @@ const list = [
 //const regExp = /\.(jpg|jpeg)/gi; OU
 const regExp = /\.jpe?g/gi;
 // ? pode aparecer ou nao
+
 const regExp2 = /\.((jp|JP)(e|E)?(g|G))/g
 
 for (let arquivos of list) {
