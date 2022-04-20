@@ -1,6 +1,15 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
+const Post = ({ post }) => {
+    return (
+        <div key={post.id} className='post'>
+            <h1>{post.title}</h1>
+            <p>{post.body}</p>
+        </div>
+    );
+}
+
 function UseMemoApp() {
     const [posts, setPosts] = useState([]);
 
@@ -16,14 +25,10 @@ function UseMemoApp() {
     return (
         <div className='App'>
             <h1>UseMemo</h1>
-            {posts.map((post) => {
-                return (
-                    <div key={post.id} className='post'>
-                        <h1>{post.title}</h1>
-                        <p>{post.body}</p>
-                    </div>
-                )
-            })}
+            {posts.length > 0 && posts.map((post) => <Post post={post} key={post.id} />)}
+            {posts.length <= 0 && (
+                <p>Sem posts no momento</p>
+            )}
         </div>
     );
 }
