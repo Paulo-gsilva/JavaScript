@@ -1,3 +1,4 @@
+import P from 'prop-types';
 import { useEffect, useMemo, useState } from 'react';
 import './App.css';
 
@@ -8,6 +9,14 @@ const Post = ({ post }) => {
             <p>{post.body}</p>
         </div>
     );
+}
+
+Post.propTypes = {
+    post: P.shape({
+        id: P.number,
+        title: P.string,
+        body: P.string
+    })
 }
 
 function UseMemoApp() {
