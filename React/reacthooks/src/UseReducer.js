@@ -10,12 +10,19 @@ const globalState = {
 const reducer = (state, action) => {
     //action recebe o type
     //recebe um estado velho e retorna o novo
-    if (action.type === 'muda') {
-        //state.title = 'mudei';
-        return { ...state, title: 'mudei' }
+    // if (action.type === 'muda') {
+    //     //state.title = 'mudei';
+    //     return { ...state, title: 'mudei' }
+    // }
+    //action.type === 'muda' && (state.title = 'mudei');
+
+    switch (action.type) {
+        case 'muda':
+            return { ...state, title: 'mudei' };
+        case 'inverter':
+            return { ...state, title: state.title.split('').reverse().join('') }
     }
 
-    //action.type === 'muda' && (state.title = 'mudei');
     return { ...state }
 }
 
@@ -27,7 +34,8 @@ function UseReducer() {
     return (
         <>
             <h1>{state.title}</h1>
-            <button onClick={() => dispatch({ type: 'muda' })}>Click</button>
+            <button onClick={() => dispatch({ type: 'muda' })}>Muda</button>
+            <button onClick={() => dispatch({ type: 'inverter' })}>Inverter</button>
         </>
     );
 }
