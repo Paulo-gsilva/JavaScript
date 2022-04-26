@@ -27,6 +27,7 @@ const reducer = (state, action) => {
 }
 
 function UseReducer() {
+    //useReducer é usado para estados mais complexos (funções)
     //useReducer recebe uma função reducer e estado inicial
     //dispatch é usado para disparar ações
     const [state, dispatch] = useReducer(reducer, globalState);
