@@ -1,16 +1,34 @@
 import { useReducer } from 'react';
 import './App.css';
 
+const globalState = {
+    title: 'Titulo inicial',
+    body: 'Body inicial',
+    counter: 0
+}
+
 const reducer = (state, action) => {
+    //action recebe o type
     //recebe um estado velho e retorna o novo
+    if (action.type === 'muda') {
+        //state.title = 'mudei';
+        return { ...state, title: 'mudei' }
+    }
+
+    //action.type === 'muda' && (state.title = 'mudei');
     return { ...state }
 }
 
 function UseReducer() {
     //useReducer recebe uma função reducer e estado inicial
-    const [] = useReducer();
+    //dispatch é usado para disparar ações
+    const [state, dispatch] = useReducer(reducer, globalState);
+    console.log(state);
     return (
-        <h1>Salve</h1>
+        <>
+            <h1>{state.title}</h1>
+            <button onClick={() => dispatch({ type: 'muda' })}>Click</button>
+        </>
     );
 }
 
